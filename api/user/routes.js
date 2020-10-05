@@ -106,5 +106,18 @@ router.get('/:userid', async (req, res) => {
 
 });
 
+//Ruta para update PIN
+router.put('/pin/:userid', async (req, res) => {
+
+  const { new_pin } = req.body;
+
+  var pinHeader = req.headers.pin;
+
+  var token = req.headers.token;
+
+  res.send("Body Pin: " + new_pin + " Header Pin: " + pinHeader + " token: " + token);
+
+});
+
 
 module.exports = router;
