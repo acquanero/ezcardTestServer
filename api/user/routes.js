@@ -6,14 +6,23 @@ router.post('/login', async (req, res) => {
 
   const { mail, password } = req.body;
 
+  console.log('mail: ' + mail + ' y password: ' + password )
+
   var rta_login = {
     user_id: 1234,
     token: "abc123"
   }
 
-  console.log('mail: ' + mail + ' y password: ' + password )
+  if (password == "colomaraca") {
 
-  res.send(JSON.stringify(rta_login));
+    res.status(401)
+    res.send("Error de logueo")
+
+  } else {
+
+    res.send(JSON.stringify(rta_login));
+
+  }
 
 });
 
