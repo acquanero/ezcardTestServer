@@ -18,22 +18,22 @@ router.post('/login', async (req, res) => {
 });
 
 //Ruta del login enviando el token en el header
-router.get('/login/:userid', async (req, res) => {
+// router.get('/login/:userid', async (req, res) => {
 
-  var myid = req.params.userid;
+//   var myid = req.params.userid;
 
-  var tokenObtenido = req.headers.token;
+//   var tokenObtenido = req.headers.token;
 
-  console.log(tokenObtenido);
+//   console.log(tokenObtenido);
 
-  var rta_loginpost = {
-    user_id: 1234,
-    token: "abc123"
-  }
+//   var rta_loginpost = {
+//     user_id: 1234,
+//     token: "abc123"
+//   }
 
-  res.send(myid);
+//   res.send(myid);
 
-});
+// });
 
 //Ruta para sign In
 router.post('/signin', async (req, res) => {
