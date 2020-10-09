@@ -30,17 +30,24 @@ router.post('/login', async (req, res) => {
 router.get('/login/:userid', async (req, res) => {
 
   var myid = req.params.userid;
-
   var tokenObtenido = req.headers.token;
+  var appidObtenido = req.headers.x-app-id;
 
-  console.log(tokenObtenido);
+  console.log("User ID obtenido: " + myid);
+  console.log("Token recibido: " + tokenObtenido);
+  console.log("AppId obtenida: " + appidObtenido);
 
-  var rta_loginpost = {
-    user_id: 1234,
-    token: "abc123"
+  if (tokenObtenido == "abc123") {
+
+    res.status(200)
+    res.send("Logueo con token correcto")
+
+  } else {
+
+    res.status(401)
+    res.send("Token incorrecto");
+
   }
-
-  res.send(myid);
 
 });
 
