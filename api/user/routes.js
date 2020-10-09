@@ -40,12 +40,10 @@ router.get('/login/:userid', async (req, res) => {
   if (tokenObtenido == "abc123") {
 
     res.status(200)
-    res.send("Logueo con token correcto")
 
   } else {
 
     res.status(401)
-    res.send("Token incorrecto");
 
   }
 
