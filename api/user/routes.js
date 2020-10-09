@@ -31,7 +31,7 @@ router.get('/login/:userid', async (req, res) => {
 
   var myid = req.params.userid;
   var tokenObtenido = req.headers.token;
-  var appidObtenido = req.headers.x-app-id;
+  var appidObtenido = req.headers.xappid;
 
   console.log("User ID obtenido: " + myid);
   console.log("Token recibido: " + tokenObtenido);
