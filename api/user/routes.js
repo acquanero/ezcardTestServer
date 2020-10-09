@@ -39,13 +39,21 @@ router.get('/login/:userid', async (req, res) => {
 
   if (tokenObtenido == "abc123") {
 
+    var rta_succes = {
+      msg: "Acceso con token exitoso"
+    }
+
     res.status(200)
-    res.send("-------Acceso con token Correcto------")
+    res.send(rta_succes)
 
   } else {
 
+    var rta_fail = {
+      msg: "Fallo el acceso con token"
+    }
+
     res.status(401)
-    res.send("-------Token incorrecto------")
+    res.send(rta_fail)
 
   }
 
