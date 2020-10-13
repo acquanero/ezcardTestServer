@@ -60,9 +60,19 @@ router.get('/login/:userid', async (req, res) => {
 });
 
 //Ruta para sign In
-router.post('/signin', async (req, res) => {
+router.post('/register', async (req, res) => {
 
-  const { name, surname, password, mail, phone } = req.body;
+  const { name, last_name, password, mail, phone, pin } = req.body;
+  const {idapp} = req.headers.xappid
+
+  console.log("-----DATOS RECIBIDOS-----")
+  console.log("name: " + name);
+  console.log("last_name: " + last_name);
+  console.log("password: " + password);
+  console.log("mail: " + mail);
+  console.log("phone: " + phone);
+  console.log("pin: " + pin)
+  console.log("xappid: " + idapp);
 
   var rta_signin = {
     user_id: 1234,
