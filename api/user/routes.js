@@ -90,12 +90,12 @@ router.get('/:userid', async (req, res) => {
     cards: [
           {
             card_id: 1,
-            card_name: "Tarjeta Banco",
+            name: "Tarjeta Banco",
             icon: 1
           },
           {
         card_id: 2,
-        card_name: "Tarjeta Cloud",
+        name: "Tarjeta Cloud",
         icon: 2
           },
           {
