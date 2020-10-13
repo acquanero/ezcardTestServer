@@ -63,7 +63,7 @@ router.get('/login/:userid', async (req, res) => {
 router.post('/register', async (req, res) => {
 
   const { name, last_name, password, mail, phone, pin } = req.body;
-  const {idapp} = req.headers.xappid
+  const {xappid} = req.headers
 
   console.log("-----DATOS RECIBIDOS-----")
   console.log("name: " + name);
@@ -72,7 +72,7 @@ router.post('/register', async (req, res) => {
   console.log("mail: " + mail);
   console.log("phone: " + phone);
   console.log("pin: " + pin)
-  console.log("xappid: " + idapp);
+  console.log("xappid: " + xappid);
 
   var rta_signin = {
     user_id: 1234,
