@@ -4,9 +4,9 @@ const router = express.Router();
 //Ruta del primer login
 router.post('/login', async (req, res) => {
 
-  const { mail, password } = req.body;
+  const { email, password } = req.body;
 
-  console.log('mail: ' + mail + ' y password: ' + password )
+  console.log('mail: ' + email + ' y password: ' + password )
 
   var rta_login = {
     user_id: 1234,
@@ -62,15 +62,15 @@ router.get('/login/:userid', async (req, res) => {
 //Ruta para sign In
 router.post('/register', async (req, res) => {
 
-  const { name, last_name, password, mail, phone, pin } = req.body;
+  const { name, last_name, password, email, cellphone, pin } = req.body;
   const {xappid} = req.headers
 
   console.log("-----DATOS RECIBIDOS-----")
   console.log("name: " + name);
   console.log("last_name: " + last_name);
   console.log("password: " + password);
-  console.log("mail: " + mail);
-  console.log("phone: " + phone);
+  console.log("email: " + email);
+  console.log("cellphone: " + cellphone);
   console.log("pin: " + pin)
   console.log("xappid: " + xappid);
 
@@ -92,11 +92,12 @@ router.get('/:userid', async (req, res) => {
 
   var rta_userData = {
     name: "Elba",
-    surname: "Nanon",
+    last_name: "Nanon",
     password: "elba123",
-    mail: "elba@gmail.com.es",
-    phone: "47778989",
+    email: "elba@gmail.com.es",
+    cellphone: "47778989",
     user_id: 1234,
+    enabled: true,
     cards: [
           {
             card_id: 1,
@@ -150,6 +151,23 @@ router.put('/pin/:userid', async (req, res) => {
   var token = req.headers.token;
 
   res.send("Body Pin: " + new_pin + " Header Pin: " + pinHeader + " token: " + token);
+
+});
+
+//Ruta para recuperar contraseña
+router.post('/recoveraccount', async (req, res) => {
+
+  const { email } = req.body;
+  const {xappid} = req.headers
+
+  console.log("-----DATOS RECIBIDOS-----")
+  console.log("email: " + email);
+  console.log("xappid: " + xappid);
+
+  var rta_recover = {
+    msg: "Mail de recuperacion enviado"
+  }
+  res.send(JSON.stringify(rta_recover));
 
 });
 
