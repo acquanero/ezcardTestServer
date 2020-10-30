@@ -53,4 +53,30 @@ router.put('/:userid', async (req, res) => {
 
 });
 
+//Add card
+router.post('/', async (req, res) => {
+
+  const { xappid, token, pin } = req.headers;
+  const { user_id, serial_number, card_name, card_icon } = req.body;
+
+  console.log('xappid: ' + xappid + ' y token: ' + token + ' y pin: ' + pin);
+  console.log('User ID: ' + user_id + ' card_name: ' + card_name + ' card_icon: ' + card_icon + ' serial number: ' + serial_number);
+
+  var rta = {
+    msg: "Tarjeta agregada exitosamente"
+  }
+
+  if (card_name == 'colomaraca') {
+
+    res.status(401)
+    res.send("Error al agregar la tarjeta")
+
+  } else {
+
+    res.send(JSON.stringify(rta));
+
+  }
+
+});
+
 module.exports = router;
