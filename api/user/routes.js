@@ -186,7 +186,7 @@ router.get('/:userid', async (req, res) => {
           provider_id: 2,
           provider_name: "Amazon",
           card_id:2,
-          enabled: true
+          enabled: false
           },
           {
           provider_id: 3,
