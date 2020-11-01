@@ -193,7 +193,13 @@ router.get('/:userid', async (req, res) => {
           provider_name: "Experta ART",
           card_id:3,
           enabled: true
-          }
+          },
+          {
+            provider_id: 4,
+            provider_name: "Netflix",
+            card_id: null,
+            enabled: true
+            }
       ]
 }
 
