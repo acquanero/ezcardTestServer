@@ -4,14 +4,15 @@ const router = express.Router();
 //Ruta del primer login
 router.post('/:userid/:providerid', async (req, res) => {
 
-  const { serial_number } = req.body;
   const { xappid, token } = req.headers;
+  const { serial_number } = req.body;
+
 
   console.log('xappid: ' + xappid + ' y token: ' + token )
   console.log('serial number: ' + serial_number)
 
   var rta_login = {
-    msg: "entry pint exitoso"
+    msg: "entry point exitoso"
   }
 
   if (serial_number == "colomaraca") {
