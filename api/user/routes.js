@@ -211,12 +211,16 @@ router.get('/:userid', async (req, res) => {
 router.put('/pin/:userid', async (req, res) => {
 
   const { new_pin } = req.body;
+  const { xappid, token, pin } = req.headers;
 
-  var pinHeader = req.headers.pin;
 
-  var token = req.headers.token;
+  console.log('new pin: ' + new_pin);
+  console.log('xappid: ' + xappid + ' y token: ' + token + ' y pin: ' + pin);
 
-  res.send("Body Pin: " + new_pin + " Header Pin: " + pinHeader + " token: " + token);
+  var rta = {
+    msg: "PIN cambiado exitosamente"
+  }
+  res.send(JSON.stringify(rta));
 
 });
 
