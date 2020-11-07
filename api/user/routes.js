@@ -98,7 +98,68 @@ router.get('/:userid', async (req, res) => {
     cellphone: "47778989",
     user_id: 1234,
     enabled: true,
-    cards: [],
+    cards: [
+      {
+        card_id: 1,
+        name: "Tarjeta Banco",
+        icon: 1
+      },
+      {
+    card_id: 2,
+    name: "Tarjeta Cloud",
+    icon: 2
+      },
+      {
+    card_id: 3,
+    name: "Tarjeta trabajo",
+    icon: 3
+      },
+      {
+        card_id: 4,
+        name: "Tarjeta Facultad",
+        icon: 1
+      },
+      {
+    card_id: 6,
+    name: "Tarjeta Carrefour",
+    icon: 2
+      },
+      {
+    card_id: 7,
+    name: "Tarjeta Edificio",
+    icon: 3
+      },
+      {
+        card_id: 8,
+        name: "Tarjeta Auto",
+        icon: 1
+      },
+      {
+    card_id: 12,
+    name: "Tarjeta Trabajo II",
+    icon: 2
+      },
+      {
+    card_id: 13,
+    name: "Tarjeta Moto",
+    icon: 3
+      },
+      {
+        card_id: 14,
+        name: "Tarjeta Banco II",
+        icon: 1
+      },
+      {
+    card_id: 15,
+    name: "Tarjeta Cloud II",
+    icon: 2
+      },
+      {
+    card_id: 16,
+    name: "Tarjeta trabajo III",
+    icon: 3
+      }
+    ],
     providers: [
           {
           provider_id: 1,
