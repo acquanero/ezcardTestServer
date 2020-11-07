@@ -93,7 +93,6 @@ router.get('/:userid', async (req, res) => {
   var rta_userData = {
     name: "Elba",
     last_name: "Nanon",
-    password: "elba123",
     email: "elba@gmail.com.es",
     cellphone: "47778989",
     user_id: 1234,
