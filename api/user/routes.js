@@ -27,7 +27,7 @@ router.post('/login', async (req, res) => {
 });
 
 //Ruta del login enviando el token en el header
-router.get('/login/:userid', async (req, res) => {
+router.post('/login/:userid', async (req, res) => {
 
   var myid = req.params.userid;
   var tokenObtenido = req.headers.token;
