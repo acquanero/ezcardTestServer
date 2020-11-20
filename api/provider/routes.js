@@ -27,7 +27,33 @@ router.put('/unbind', async (req, res) => {
   
   });
 
-  //Associate service to cards
+//Change service name
+router.put('/name/:userid', async (req, res) => {
+
+  const { xappid, token, pin } = req.headers;
+  const { provider_id, name } = req.body;
+
+  console.log('xappid: ' + xappid + ' y token: ' + token + ' y pin: ' + pin);
+  console.log('Provider id: ' + provider_id + ' Nuevo nombre: ' + name);
+
+  var rta = {
+    msg: "Cambio de nombre exitoso"
+  }
+
+  if (provider_id == 1) {
+
+    res.status(401)
+    res.send("Error al cambiar el nombre")
+
+  } else {
+
+    res.send(JSON.stringify(rta));
+
+  }
+
+});
+
+//Associate service to cards
 router.post('/bind', async (req, res) => {
 
     const { xappid, token, pin } = req.headers;
