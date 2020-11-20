@@ -37,25 +37,12 @@ router.post('/login/:userid', async (req, res) => {
   console.log("Token recibido: " + tokenObtenido);
   console.log("AppId obtenida: " + appidObtenido);
 
-  if (tokenObtenido == "abc123") {
-
-    var rta_succes = {
-      msg: "Acceso con token exitoso"
-    }
-
-    res.status(200)
-    res.send(rta_succes)
-
-  } else {
-
-    var rta_fail = {
-      msg: "Fallo el acceso con token"
-    }
-
-    res.status(401)
-    res.send(rta_fail)
-
+  var rta_succes = {
+    token: "abc123"
   }
+
+  res.status(200)
+  res.send(rta_succes)
 
 });
 
